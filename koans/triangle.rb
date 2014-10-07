@@ -14,7 +14,10 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  if a === b && b === c
+  a, b, c = [a, b, c].sort
+  if a + b <= c
+    fail TriangleError, "My Triangle error"
+  elsif a === b && b === c
     :equilateral
   elsif a === b || a === c || b === c
     :isosceles
